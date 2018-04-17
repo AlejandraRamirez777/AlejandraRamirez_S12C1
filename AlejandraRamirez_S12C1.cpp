@@ -14,14 +14,15 @@ int main () {
     double X[nX];
 
     double cx = 0;
-    double dx = 2.0/80.0 ;
+    double dx = 2.0/80.0;
     int ci = 0;
     double L = 2.0;
 
-    while(cx<L){
-         X[ci] = cx;
-	 cx += cx*dx;
+    for(int i=0; i<L;i++){
+         X[i] = cx;
+	 cx += dx;
          ci++;   
+        cout << cx << endl;
     }
 
     for(int i=0; i<L;i++){
