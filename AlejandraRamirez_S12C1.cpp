@@ -18,14 +18,14 @@ int main () {
     int ci = 0;
     double L = 2.0;
 
-    for(int i=0; i<L;i++){
+    for(int i=0; i<nX;i++){
          X[i] = cx;
 	 cx += dx;
-         ci++;   
+         //ci++;   
         cout << cx << endl;
     }
 
-    for(int i=0; i<L;i++){
+    for(int i=0; i<nX;i++){
         if(X[i]<1.25 and X[i]>0.75){
 	    U[i] = 2.0;
 	}
