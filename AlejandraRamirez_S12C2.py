@@ -10,12 +10,15 @@ A = np.genfromtxt("datax2.txt", usecols = 1)
 plt.plot(xi,Ai, c = "g")
 
 plt.plot(x[:78],A[:78])
-print x[77]
+#print x[77]
 plt.ylim(0.9,2.2)
 #plt.xlim(0,10)
+plt.title("Progresion de onda en el tiempo")
+plt.ylabel("Amplitud")
+plt.xlabel("Posicion")
 
 end = np.shape(x)
-print end
+#print end
 a = 0
 c = 78
 
@@ -24,8 +27,8 @@ while(c<end[0]):
     plt.plot(x[a:c],A[a:c])
     a += 78
     c +=78
-    print c
+    #print c
     
 
-
+plt.savefig("ProgressT.png")
 plt.show()
