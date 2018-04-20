@@ -1,4 +1,6 @@
 #include <iostream>
+#include<algorithm> // for copy()
+#include<vector>
 
 using namespace std;
 
@@ -12,10 +14,10 @@ int main () {
     double c = 1.0;
 
     //U es para Ui y j
-    double U[nX];
+    vector<double> U(nX);
     //Uf es para Ui y j+1
-    double Uf[nX];
-    double X[nX];
+    vector<double> Uf(nX);
+    vector<double> X(nX);
 
     double cx = 0;
     double dx = 2.0/80.0;
@@ -38,16 +40,17 @@ int main () {
             U[i] = 1.0;
 	    Uf[i] = 1.0;
     	}
-      //cout << U[i] << endl;
+      //cout << X[i] <<  " "<< U[i] << endl;
     }
 
 
     //Generar recorrido
     for(int i=0; i<nT;i++){
-        for(int k=0; k<(nX-1);k++){
+        for(int k=1; k<(nX-1);k++){
             Uf[k] = U[k] - c*(dt/dx)*(U[k]-U[k-1]);
 	    cout << X[k] <<  " " << Uf[k] << endl;
         }
+        copy(Uf.begin(), Uf.end(), U.begin());
     }
 
 }
